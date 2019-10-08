@@ -70,6 +70,12 @@ Generate a name formatted as "kebab-case" without any diacritics:
 
    $ qngng --kebab-case
 
+Generate a double surname:
+
+.. code-block:: sh
+
+   $ qngng --doublename
+
 qngng-uda
 ~~~~~~~~~
 If you want to get a real `UDA <https://uda.ca/>`_ member name, you can

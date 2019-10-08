@@ -22,6 +22,8 @@ def _parse_args():
                         help='Print names in "kebab-case" format')
     parser.add_argument('--weighted', '-w', action='store_true',
                         help='Pick names according to their relative popularity')
+    parser.add_argument('--doublename', '-d', action='store_true',
+                        help='Create a double-barrelled name')
     args = parser.parse_args()
     common._validate_snake_kebab_args(args)
     return args
@@ -81,7 +83,13 @@ def _run(args):
         get_random_name = _get_random_name
 
     name = get_random_name(names)
+
     surname = get_random_name(surnames)
+
+    if args.doublename :
+        second_surname = get_random_name(surnames)
+        surname = f'{surname}-{second_surname}'
+
     common._print_name(name, surname, args)
 
 
